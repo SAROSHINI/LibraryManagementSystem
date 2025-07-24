@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Books</h2>
+<form method="post" class="mb-3">
+  <input name="title" placeholder="Book Title" required class="form-control mb-2">
+  <input name="author" placeholder="Author" required class="form-control mb-2">
+  <button type="submit" class="btn btn-success">Add Book</button>
+</form>
+<table class="table table-bordered">
+  <tr><th>ID</th><th>Title</th><th>Author</th></tr>
+  {% for book in books %}
+  <tr><td>{{ book[0] }}</td><td>{{ book[1] }}</td><td>{{ book[2] }}</td></tr>
+  {% endfor %}
+</table>
+{% endblock %}
